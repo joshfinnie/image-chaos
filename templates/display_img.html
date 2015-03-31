@@ -2,5 +2,14 @@
 {% block body %}
   <a href='/'><-- BACK</a>
   <h1>Image # {{ image }}</h1>
-  <img src="{{ url_for('static', filename='images/') }}{{ image }}_processed.jpg">
+  <p><img src="{{ url_for('static', filename='images/') }}{{ image }}_processed.jpg" id='pic' /></p>
+  <p>
+  <a href="https://www.google.com/searchbyimage?site=search&sa=X&image_url={{ url_for('static', filename='images/') }}{{ image }}_processed.jpg" class="btn">Search Google</a>
+  <button class="btn" onClick=revealPic()>Reveal</button>
+  </p>
+  <script>
+    function revealPic() {
+      document.getElementById("pic").src = "{{ url_for('static', filename='images/') }}{{ image }}.jpg";
+    }
+  </script>
 {% endblock %}
