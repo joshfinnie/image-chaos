@@ -1,0 +1,6 @@
+{% extends "layout.html" %}
+{% block body %}
+  <a href='/'><-- BACK</a>
+  <h1>Image # {{ image }}</h1>
+  <img src="{{ url_for('static', filename='images/') }}{{ image }}_processed.jpg">
+{% endblock %}
