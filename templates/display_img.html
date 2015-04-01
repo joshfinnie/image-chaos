@@ -4,8 +4,8 @@
   <h1>Image # {{ image }}</h1>
   <p><img src="{{ url_for('static', filename='images/') }}{{ image }}_processed.jpg" id='pic' /></p>
   <p>
-  <a href="https://www.google.com/searchbyimage?site=search&sa=X&image_url={{ url_for('static', filename='images/') }}{{ image }}_processed.jpg" class="btn">Search Google</a>
-  <button class="btn" onClick=revealPic()>Reveal</button>
+  <button class="btn" onClick="location.reload();">Reload</button>
+  <button class="btn" onClick="revealPic()">Reveal</button>
   </p>
   <script>
     function revealPic() {
